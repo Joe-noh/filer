@@ -17,6 +17,11 @@ config :filer, Filer.Endpoint,
   pubsub: [name: Filer.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :filer, :basic_auth,
+  realm: "Restricted Area",
+  username: "",
+  password: ""
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

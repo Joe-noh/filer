@@ -41,3 +41,4 @@ config :filer, Filer.Repo,
   database: "filer_dev",
   hostname: "localhost",
   pool_size: 10
+

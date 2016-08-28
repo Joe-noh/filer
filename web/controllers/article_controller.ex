@@ -3,6 +3,8 @@ defmodule Filer.ArticleController do
 
   alias Filer.Article
 
+  plug BasicAuth, Application.get_env(:filer, :basic_auth) when action != :download
+
   def index(conn, _params) do
     articles = Repo.all(Article)
     render(conn, "index.html", articles: articles)
