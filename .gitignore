@@ -4,6 +4,9 @@
 /deps
 /*.ez
 
+/rel/*
+!/rel/config.exs
+
 # Generated on crash by the VM
 erl_crash.dump
 
