@@ -62,4 +62,16 @@ defmodule Filer.ArticleController do
     |> put_flash(:info, "Article deleted successfully.")
     |> redirect(to: article_path(conn, :index))
   end
+
+  def download(conn, %{"filename" => filename}) do
+    filename = Enum.join(filename)
+
+    article = from(Article)
+      |> where([a], a.title == ^filename)
+      |> Repo.one!
+
+    conn
+    |> put_status(200)
+    |> text(article.content)
+  end
 end

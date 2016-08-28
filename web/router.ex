@@ -17,6 +17,7 @@ defmodule Filer.Router do
     pipe_through :browser # Use the default browser stack
 
     resources "/files", ArticleController
+    get "/get/*filename", ArticleController, :download
   end
 
   # Other scopes may use custom stacks.
